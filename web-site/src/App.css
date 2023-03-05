@@ -1,0 +1,719 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  position: relative;
+}
+body{
+  overflow-y: scroll;
+}
+.App {
+  text-align: center;
+  width:60%;
+  margin-left:20%;
+  background-color: #ccc;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+/* .App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+} */
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/*Body*/
+body{
+  background-color: #404040;
+}
+
+/* Header */
+.header--input{
+  width:60%;
+}
+.header--input__button{
+  width:20% !important;  
+  color: white;
+  background-color: rgb(13, 110, 253);
+  text-decoration: none;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.header--brand{
+  padding:3px 5px;
+  text-decoration:none;
+  color:white;
+}
+.header--brand:hover{
+  color:white;
+  background:rgb(13, 110, 253);
+  
+}
+
+/*tabfunction */
+.tabfunctions{
+  display:flex;
+  border: 1px solid white;
+}
+.tabfunctions--function{
+  width:20%;
+  border: 1px solid white;
+  height:50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+.tabfunctions--function:hover{
+  background-color: #0d6efd;
+  color:white;
+}
+.function--link{
+  text-decoration: none;
+  color: white;
+}
+/* Các function của xem tổng hợp */
+.tabfunctions--function__all{
+  width:500%;
+  height:100%;
+  display:flex;
+  flex-wrap:wrap;
+  position: absolute;
+  top:105%;
+  left:0%;
+  z-index: 20;
+}
+
+.function__all--children{
+  width:25%;
+  height:100%;
+  background-color: #908686;
+  color:black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+}
+
+.function__all--children:hover{
+  border: 2px solid #61dafb;
+  background-color: var(--bs-body-color);
+  color: white !important;
+}
+
+
+/* Các function của xem ngẫu nhiên */
+.tabfunctions--function__random{
+  width:500%;
+  height:100%;
+  display:flex;
+  flex-wrap:wrap;
+  position: absolute;
+  top:105%;
+  left:-100%;
+  z-index: 20;
+  
+}
+.function__random--children{
+  width:25%;
+  height:100%;
+  background-color: #908686;
+  color:black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  text-decoration: none;
+}
+
+.function__random--children:hover{
+  border: 2px solid #61dafb;
+  background-color: var(--bs-body-color);
+  color:white;
+}
+
+
+/* Các function của xem theo thể loại */
+.tabfunctions--function__category{
+  width:500%;
+  height:100%;
+  display:flex;
+  flex-wrap:wrap;
+  position: absolute;
+  top:105%;
+  left:-200%;
+  z-index: 20;
+}
+.function__category--children{
+  width:25%;
+  height:50%;
+  background-color: #908686;
+  color:black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  text-decoration: none;
+}
+
+.function__category--children:hover{
+  border: 2px solid #61dafb;
+  background-color: var(--bs-body-color);
+  color:white !important;
+}
+
+/*Phim đề cử */
+
+.phim_de_cu{
+  height:35px;
+  margin-top:10px;
+  margin-bottom:10px;
+  background-color: #795548;
+}
+.phim_de_cu h3{
+  width:20%;
+  height:35px;
+  background-color: #000;
+  color: #ff2070;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/*phim mới cập nhật*/
+
+.moi_cap_nhat,.lich_film{
+  height:35px;
+  margin-top:10px;
+  margin-bottom:10px;
+  background-color: #795548;
+}
+.moi_cap_nhat h3,.lich_film h3{
+  width:40%;
+  height:35px;
+  background-color: #000;
+  color: #ff2070;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.movies{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: #ccc;
+}
+
+.movie--item{
+  width:24%;
+  height:300px;
+  padding: 5px;
+  background-color: black;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  position: relative;
+  text-decoration: none;
+}
+.movie--item__episode{
+  width:100%;
+  text-align: center;
+  color:#02d5bd;
+}
+.movie--item__avatar{
+  width:90%;
+  height:70%;
+}
+
+.movie--item__title{
+  text-align: center;
+  color: #cc8d4c;
+}
+
+.dimensional{
+  width:30px;
+  height:30px;
+  position: absolute;
+  top:10%;
+  left:10%;
+  background-color: #000;
+  z-index: 10;
+  font-weight: bold;
+  color:#ff2070;
+}
+
+
+/* Movie Information*/
+.movieInfor{
+  display:flex;
+  flex-direction: column;
+  background-color: #212529;
+}
+.movieInfor--title{
+  margin-top:15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #ccc;
+  font-size: 25px;
+  font-weight: bold;
+}
+.movieInfor--infors{
+  width:100%;
+  height:300px;
+  padding:15px;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.movieInfor--infors__avatar{
+  display:block;
+  width:25%;
+  height:100%;
+}
+.movieInfor--infors__infors{
+  width:70%;
+  display:flex;
+  flex-direction: column;
+  color:white;
+}
+.movieInfor--infors__infors_{
+  margin-top:5px;
+  padding:5px;
+  display:flex;
+  flex-direction:row;
+  border-bottom: 1px solid white;
+}
+
+.movieInfor--infors__infors_title{
+  width:20% !important;
+  text-align: left;
+}
+.movieInfor--infors__infors_categories_categories, .movieInfor--infors__infors_episode_episode{
+  width:85%;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.movieInfor--infors__infors_categories_category{
+  padding-left:3px !important;
+  padding-right:3px !important;
+  margin-left:5px;
+  text-decoration: none;
+  background-color: #ccc;
+  padding:2px;
+}
+
+.movieInfor--infors__infors_categories_category:hover{
+  background-color: #0d6efd;
+  color:black;
+}
+
+.movieInfor--infors__infors_view,.movieInfor--infors__infors_year{
+  width:85%;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.movieInfor--infors__infors_view a{
+  padding-left:3px;
+  padding-right:3px;
+  margin-left: 5px;
+  background-color:#ccc;
+  color:#0d6efd;
+  text-decoration: none;
+}
+.movieInfor--infors__infors_view a:hover{
+  background-color:#0d6efd;
+  color:white;
+}
+/* Danh sách tập */
+.list_episode-content{
+  margin-top:15px;
+  margin-bottom: 15px;
+  color:white;
+  display:Flex;
+  flex-direction:row;
+  justify-content: space-around;
+}
+.list_episode{
+  width:30%;
+  border: 2px dotted white;
+}
+.list_episode--scroll-bar{
+  padding:3px;
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  overflow-y: scroll;
+  height:144px;
+}
+.list_episode--scroll-bar a{
+  width:23%;
+  height:25px;
+  margin-left:calc(8%/5);
+  text-decoration:none;
+  background-color: #ccc;
+  margin-bottom: 3px;
+  
+}
+.list_episode--scroll-bar a:hover{
+  background-color: #0d6efd;
+  color:white;
+}
+
+.list_episode-content__{
+  width:66%;
+  border: 2px dotted white;
+}
+.list_episode h4, .list_episode-content__ h4{
+  border-bottom: 2px dotted white;
+}
+
+
+
+/* Thể Loại Phim */
+.phim_theo_the_loai, .phim_theo_tim_kiem{
+  height:auto;
+  margin-top:10px;
+  margin-bottom:10px;
+  background-color: #795548;
+}
+.phim_theo_the_loai h3{
+  width:50%;
+  height:35;
+  background-color: #000;
+  color: #ff2070;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.phim_theo_tim_kiem h3{
+  width:100%;
+  height:auto;
+  background-color: #000;
+  color: #ff2070;
+  display:flex;
+  align-items:center;
+}
+
+
+/* Lịch chiếu phim */
+.lich_film_thu{
+  display:flex;
+  position: relative;
+}
+.lich_film_thu_child{
+  width:calc(100%/7);
+  height:50px;
+  border:1px solid white;
+  border-bottom: 1px solid rgb(13, 110, 253);
+  cursor: pointer;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+}
+.lich_film_thu_child:hover{
+  color: white;
+  background-color: rgb(13, 110, 253);
+}
+
+.lich_film_thu_child_{
+  display:flex;
+  flex-wrap:wrap;
+}
+.films_lich{
+  padding-top:5px;
+  border:8px solid rgb(13, 110, 253);
+}
+
+.lich_film_thu_child_ .movie--item{
+  width:19%;
+  height:250px;
+  margin-left:calc(6%/7);
+}
+.movie--item__title{
+  font-size:16px;
+}
+
+
+/* Css footer */
+.footer{
+  width:100%;
+  padding: 30px 0;
+  margin-top:15px;
+  border-top:3px solid white;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+}
+
+.footer a{
+  width:80%;
+  text-decoration:none;
+  padding:15px;
+  background-color: #0d6efd;
+  color:white;
+}
+.footer a:hover{
+  background-color: #336abc;
+}
+
+
+/* xem phim */
+.xem-phim--title{
+  height:auto;
+  margin-top:10px;
+  margin-bottom:10px;
+  background-color: #795548;
+}
+
+.xem-phim--title h3{
+  width:50%;
+  height:35;
+  background-color: #000;
+  color: #ff2070;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.viewMV_list_episode{
+  width:85%;
+  margin-left:calc(15%/2);
+  margin-top:10px;  
+  border:1px dotted white;
+  display:flex;
+  flex-direction:column;
+  background-color: #212529;
+}
+.viewMV_list_episode h4{
+  color:white;
+}
+
+.viewMV_list_episode .list_episode--scroll-bar{
+  display:flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  height:220px;
+}
+.viewMV_list_episode .list_episode--scroll-bar a{
+  width:calc(95%/8) !important;
+  background-color: #ccc;
+  margin-left:calc(5%/8);
+  height:30px;
+}
+
+.viewMV_list_episode .list_episode--scroll-bar a:hover{
+  background-color: #0d6efd;
+}
+
+.viewMV_list_episode .list_episode--scroll-bar .activity{
+  background-color: #0d6efd;
+  color:white;
+}
+
+.prev-next{
+  margin-top:15px;
+  width:40%;
+  margin-left:30%;
+}
+.prev-next a{
+  width: 40%;
+  margin-left:calc(20%/3);
+  background-color: #0d6efd;
+  color:white;
+  padding:5px;
+  text-decoration:none;
+}
+.prev-next a:hover{
+  background-color:#4570b1;
+  
+}
+
+
+@media only screen and (max-width: 1100px) {
+  .header--input{
+    width:100%;
+  }
+  .lich_film h3,.phim_theo_the_loai h3,.moi_cap_nhat h3,.xem-phim--title h3{
+    font-size: 22px;
+  }
+
+  .list_episode--scroll-bar a{
+    width:32%;
+    margin-left:1%;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  
+  .container-fluid{
+    padding-left:0px;
+    padding-right:0px;
+  }
+  .films_lich .movie--item{
+    width:24%;
+    margin-left:calc(4%/5);
+  }
+  .lich_film h3,.phim_theo_the_loai h3,.moi_cap_nhat h3,.xem-phim--title h3{
+    font-size: 20px;
+  }
+  .movieInfor--infors__infors_title{
+    width:30% !important;
+  }
+  .list_episode--scroll-bar a{
+    width:48%;
+    margin-left:2%;
+  }
+  .viewMV_list_episode .list_episode--scroll-bar a{
+    width:16% !important;
+    margin-left:calc(4%/7);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .App{
+    width:80%;
+    margin-left:10%;
+  }
+  .movie--item{
+    width:32% !important;
+  }
+  .lich_film h3,.phim_theo_the_loai h3,.moi_cap_nhat h3,.xem-phim--title h3{
+    font-size: 16px;
+  }
+  .movieInfor--infors__infors{
+    font-size:12px;
+  }
+  .movieInfor--infors{
+    height:180px;
+  }
+  .tabfunctions--function {
+    font-size:10px;
+    height:35px;
+  }
+  .lich_film_thu_child{
+    font-size:10px;  
+    height:35px; 
+  }
+  .films_lich {
+    border: 3px solid rgb(13, 110, 253);
+  }
+  .xem-phim_player{
+    height:400px;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .App{
+    width:96%;
+    margin-left:2%;
+  }
+  .header{
+    width:100%;
+  }
+  .xem-phim_player{
+    height:300px;
+  }
+  .viewMV_list_episode .list_episode--scroll-bar a{
+    width:calc(93%/6) !important;
+    margin-left:1%;
+  }
+}
+@media only screen and (max-width: 530px) {
+  .movie--item{
+    width:40% !important;
+  }
+  .list_episode-content{
+    font-size:10px;
+  }
+  .movieInfor--infors__infors_categories_category{
+    font-size:8px;
+  }
+  .prev-next{
+    width:60%;
+    margin-left:20%;
+  }
+  .viewMV_list_episode .list_episode--scroll-bar a{
+    width:24% !important;
+    margin-left:calc(4%/5);
+  }
+}
+@media only screen and (max-width: 430px) {
+  .movie--item{
+    width:45% !important;
+  }
+  .list_episode-content{
+    font-size:8px;
+  }
+  .movieInfor--infors__infors_categories_category{
+    font-size:8px;
+  }
+}
+
+
+@media only screen and (max-width: 350px) {
+  .movie--item{
+    width:48% !important;
+  }
+  .xem-phim_player{
+    height:200px;
+  }
+  .prev-next{
+    width:80%;
+    margin-left:10%;
+  }
+  .viewMV_list_episode .list_episode--scroll-bar a{
+    width:32% !important;
+    margin-left:1%;
+  }
+}
+
+@media only screen and (max-width: 270px) {
+  .movie--item{
+    width:80% !important;
+  }
+  .navbar-brand{
+    font-size:15px;
+  }
+  .xem-phim_player{
+    height:100px;
+  }
+}
