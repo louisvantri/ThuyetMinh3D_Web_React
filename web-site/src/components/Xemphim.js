@@ -41,7 +41,15 @@ const Xemphim=(props)=>{
                 <div className='xem-phim--title'>
                     <h3>{props.movies[viewMv.id-1]?.name?props.movies[viewMv.id-1]?.name:"Bộ phim này chưa được cập nhật!"} {props.movies[viewMv.id-1]?.videos[viewMv.index-1]?.name}</h3>
                 </div>
-                <iframe className="xem-phim_player" width="85%" height="500px" src={props.movies[viewMv.id-1]?.videos[viewMv.index-1]?.value? props.movies[viewMv.id-1]?.videos[viewMv.index-1]?.value:"https://www.youtube.com/embed/J4QUfkRJzjg?autoplay=1"}  allowFullScreen="1"></iframe>
+                {
+                    props.movies[viewMv.id-1]?.videos[viewMv.index-1]?.value ?
+                        <iframe className="xem-phim_player" width="85%" height="500px" src={props.movies[viewMv.id-1]?.videos[viewMv.index-1]?.value }  allowFullScreen="1"></iframe>:
+                        <div className="xem-phim_player chưa_cap_nhat_div" width="85%" height="500px">
+                            Tập Phim Này Chưa Được Cập Nhật.<br/>Phim "{props.movies[viewMv.id-1]?.name}" Được Cập Nhật Vào "{props.movies[viewMv.id-1]?.lich_chieu}" Hàng Tuần<br/>
+                            Vui Lòng Quay Lại Sau.<br/>Xin Lỗi Vì Sự Bất Tiện Này.
+                        </div>
+                }
+                
                 <div className="prev-next">
                     <Link to={`/xem-phim/${props.movies[viewMv.id-1]?.name}/id=${props.movies[viewMv.id-1]?.id}/episode=${viewMv.index-1}`}>Tập Trước</Link>
                     <Link to={`/xem-phim/${props.movies[viewMv.id-1]?.name}/id=${props.movies[viewMv.id-1]?.id}/episode=${viewMv.index+1}`}>Tập Tiếp</Link>
@@ -52,84 +60,13 @@ const Xemphim=(props)=>{
                 <div className="list_episode--scroll-bar">
                     {
                         props.movies[viewMv.id-1]?.videos?.map((itemvd,index)=>{
-                        return(
-                                <Link to={`/xem-phim/${props.movies[viewMv.id-1]?.name}/id=${props.movies[viewMv.id-1]?.id}/episode=${index+1}`} className={index+1===viewMv.index? "activity":""}>{itemvd.name}</Link>
-                        )
+                            return(
+                                    <Link to={`/xem-phim/${props.movies[viewMv.id-1]?.name}/id=${props.movies[viewMv.id-1]?.id}/episode=${props.movies[viewMv.id-1]?.videos.length-index}`} className={props.movies[viewMv.id-1]?.videos.length-index===viewMv.index? "activity":""}>{props.movies[viewMv.id-1]?.videos[props.movies[viewMv.id-1]?.videos.length-index-1]?.name}</Link>
+                            )
                         })
                     }
                 </div>
             </div>
-
-
-            
-            {/* {
-
-                props.movies.map((item,index)=>{
-                    if(item.id==viewMv.id){
-                        if(item.videos.length>=viewMv.index && viewMv.index>0)
-                        {
-                            return(
-                                <>
-                                    <div className="xem-phim">
-                                        <div className='xem-phim--title'>
-                                            <h3>{item.name} {item.videos[viewMv.index-1].name}</h3>
-                                        </div>
-                                        <iframe className="xem-phim_player" width="85%" height="500px" src={item.videos[viewMv.index-1]?.value}  allowfullscreen="1"></iframe>
-                                        <div className="prev-next">
-                                            <Link to={`/xem-phim/${item.name}/id=${item.id}/episode=${viewMv.index-1}`}>Tập Trước</Link>
-                                            <Link to={`/xem-phim/${item.name}/id=${item.id}/episode=${viewMv.index+1}`}>Tập Tiếp</Link>
-                                        </div>
-                                    </div>
-                                    <div className="viewMV_list_episode">
-                                        <h4>Danh Sách Tập</h4>
-                                        <div className="list_episode--scroll-bar">
-                                            {
-                                                item.videos?.map((itemvd,index)=>{
-                                                    return(
-                                                            <Link to={`/xem-phim/${item.name}/id=${item.id}/episode=${index+1}`} className={index+1===viewMv.index? "activity":""}>{itemvd.name}</Link>
-                                                    )
-                                                })
-                                            }
-                                        </div>
-                                    </div>
-                                </>
-                            )
-                        }
-                        else{
-                            return(
-                                <>
-                                    <div className="xem-phim">
-                                            <div className='xem-phim--title'>
-                                            <h3>{item.name} Tập</h3>
-                                            </div>
-                                            <iframe className="xem-phim_player" width="85%" height="500px" src="https://www.youtube.com/embed/w54zjdxbtFY"  autoplay control allowfullscreen="1"></iframe>
-                                            <div className="prev-next">
-                                                <Link to={`/xem-phim/${item.name}/id=${item.id}/episode=${viewMv.index-1}`}>Tập Trước</Link>
-                                                <Link to={`/xem-phim/${item.name}/id=${item.id}/episode=${viewMv.index+1}`}>Tập Tiếp</Link>
-                                            </div>
-                                            <div className="viewMV_list_episode">
-                                                <h4>Danh Sách Tập</h4>
-                                                <div className="list_episode--scroll-bar">
-                                                    {
-                                                        item.videos?.map((itemvd,index)=>{
-                                                            return(
-                                                                    <Link to={`/xem-phim/${item.name}/id=${item.id}/episode=${index+1}`} className={index+1===viewMv.index? "activity":""}>{itemvd.name}</Link>
-                                                            )
-                                                        })
-                                                    }
-                                                </div>
-                                            </div>
-                                    </div>
-                                </>
-                            )
-                        }
-                        
-                    }
-                    
-                })
-
-            
-            } */}
            
         </div>
     )

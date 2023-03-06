@@ -380,6 +380,7 @@ body{
   display:flex;
   flex-direction:row;
   flex-wrap:wrap;
+  align-items: flex-start;
   overflow-y: scroll;
   height:144px;
 }
@@ -390,7 +391,6 @@ body{
   text-decoration:none;
   background-color: #ccc;
   margin-bottom: 3px;
-  
 }
 .list_episode--scroll-bar a:hover{
   background-color: #0d6efd;
@@ -564,6 +564,17 @@ body{
 .prev-next a:hover{
   background-color:#4570b1;
   
+}
+.chưa_cap_nhat_div{
+  width:80%;
+  margin-left:10%;
+  height:500px;
+  background-color: white;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  font-weight: bold;
+  font-size:21px;
 }
 
 

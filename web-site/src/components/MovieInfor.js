@@ -128,7 +128,7 @@ const MovieInfor=(props)=>{
                                             {
                                                 item.videos?.map((itemvd,index)=>{
                                                     return(
-                                                        <Link to={`/xem-phim/${item.name}/id=${item.id}/episode=${index+1}`}>{itemvd.name}</Link>
+                                                        <Link to={`/xem-phim/${item.name}/id=${item.id}/episode=${item.videos.length-index}`}>{item.videos[item.videos.length-index-1]?.name}</Link>
                                                     )
                                                 })
                                             }
